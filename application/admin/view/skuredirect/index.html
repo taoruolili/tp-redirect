@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- BEGIN META --> 
+    <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="">
+      <meta name="author" content="Custom Theme">
+    <!-- END META -->
+     
+      <!-- BEGIN SHORTCUT ICON -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- END SHORTCUT ICON -->
+      <title>统计列表</title>
+    
+    <!-- BEGIN STYLESHEET --> 
+      {include file='pub/css'}
+      <block name="css">
+
+      </block>
+      <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+      <![endif]-->
+    <!-- END STYLESHEET --> 
+   </head>
+   <body>
+   <!-- BEGIN SECTION --> 
+      <section id="container" class="">
+      <!-- 头部 --> 
+      {include file='pub/header'}
+      <block name='header'>
+      </block>
+     <!-- END HEADER --> 
+     
+     <!-- 侧边栏 --> 
+         {include file='pub/base'}
+         <block name="sidebar">
+
+         </block>
+     <!-- END SIDEBAR --> 
+     
+     <!-- BEGIN MAIN CONTENT --> 
+         <section id="main-content">
+        <!-- BEGIN WRAPPER  -->
+            <section class="wrapper site-min-height">
+               <section class="panel">
+                  <div class="panel-body">
+                     <div class="adv-table editable-table ">
+                        <div class="clearfix">
+                           <div class="btn-group">
+                           <form action="add_user" method="get">
+                              <button id="" class="btn btn-success green">
+                              添加 <i class="fa fa-plus"></i>
+                              </button>
+                           </form>
+                              
+                           </div>
+                           <div class="btn-group pull-right">
+                              <!-- <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Tools <i class="fa fa-angle-down"></i> -->
+                              </button>
+                              <ul class="dropdown-menu pull-right">
+                                 <li><a href="#">Print</a></li>
+                                 <li><a href="#">Save as PDF</a></li>
+                                 <li><a href="#">Export to Excel</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="space15"></div>
+                        <table class="table table-striped table-hover table-bordered" id="editable-sample">
+                           <thead>
+                              <tr>
+                                 <th>Username</th>
+                                 <th class="hidden-phone">Full Name</th>
+                                 <th class="hidden-phone">Points</th>
+                                 <th class="hidden-phone">Notes</th>
+                                 <th>Edit</th>
+                                 <th>Delete</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr class="">
+                                 <td>Jondi Rose</td>
+                                 <td class="hidden-phone">Alfred Jondi Rose</td>
+                                 <td class="hidden-phone">1234</td>
+                                 <td class="center hidden-phone">super user</td>
+                                 <td><a class="edit" href="javascript:;"><span class="label label-success">Edit</span></a></td>
+                                 <td><a class="delete" href="javascript:;"><span class="label label-danger">Delete</span></a></td>
+                              </tr>
+                              <tr class="">
+                                 <td>Dulal</td>
+                                 <td class="hidden-phone">Jonathan Smith</td>
+                                 <td class="hidden-phone">434</td>
+                                 <td class="center hidden-phone">new user</td>
+                                 <td><a class="edit" href="javascript:;"><span class="label label-success">Edit</span></a></td>
+                                 <td><a class="delete" href="javascript:;"><span class="label label-danger">Delete</span></a></td>
+                              </tr>
+                              <tr class="">
+                                 <td>Sumon</td>
+                                 <td class="hidden-phone"> Sumon Ahmed</td>
+                                 <td class="hidden-phone">232</td>
+                                 <td class="center hidden-phone">super user</td>
+                                 <td><a class="edit" href="javascript:;"><span class="label label-success">Edit</span></a></td>
+                                 <td><a class="delete" href="javascript:;"><span class="label label-danger">Delete</span></a></td>
+                              </tr>
+                              <tr class="">
+                                 <td>vectorlab</td>
+                                 <td class="hidden-phone">dk mosa</td>
+                                 <td class="hidden-phone">132</td>
+                                 <td class="center hidden-phone">elite user</td>
+                                 <td><a class="edit" href="javascript:;"><span class="label label-success">Edit</span></a></td>
+                                 <td><a class="delete" href="javascript:;"><span class="label label-danger">Delete</span></a></td>
+                              </tr>
+                              <tr class="">
+                                 <td>Admin</td>
+                                 <td class="hidden-phone"> Flat Lab</td>
+                                 <td class="hidden-phone">462</td>
+                                 <td class="center hidden-phone">new user</td>
+                                 <td><a class="edit" href="javascript:;"><span class="label label-success">Edit</span></a></td>
+                                 <td><a class="delete" href="javascript:;"><span class="label label-danger">Delete</span></a></td>
+                              </tr>
+                              <tr class="">
+                                 <td>Rafiqul</td>
+                                 <td class="hidden-phone">Rafiqul dulal</td>
+                                 <td class="hidden-phone">62</td>
+                                 <td class="center hidden-phone">new user</td>
+                                 <td><a class="edit" href="javascript:;"><span class="label label-success">Edit</span></a></td>
+                                 <td><a class="delete" href="javascript:;"><span class="label label-danger">Delete</span></a></td>
+                              </tr>
+                              <tr class="">
+                                 <td>Jhon Doe</td>
+                                 <td class="hidden-phone">Jhon Doe </td>
+                                 <td class="hidden-phone">1234</td>
+                                 <td class="center hidden-phone">super user</td>
+                                 <td><a class="edit" href="javascript:;"><span class="label label-success">Edit</span></a></td>
+                                 <td><a class="delete" href="javascript:;"><span class="label label-danger">Delete</span></a></td>
+                              </tr>
+                              <tr class="">
+                                 <td>Dulal</td>
+                                 <td class="hidden-phone">Jonathan Smith</td>
+                                 <td class="hidden-phone">434</td>
+                                 <td class="center hidden-phone">new user</td>
+                                 <td><a class="edit" href="javascript:;"><span class="label label-success">Edit</span></a></td>
+                                 <td><a class="delete" href="javascript:;"><span class="label label-danger">Delete</span></a></td>
+                              </tr>
+                              <tr class="">
+                                 <td>Sumon</td>
+                                 <td class="hidden-phone"> Sumon Ahmed</td>
+                                 <td class="hidden-phone">232</td>
+                                 <td class="center hidden-phone">super user</td>
+                                 <td><a class="edit" href="javascript:;"><span class="label label-success">Edit</span></a></td>
+                                 <td><a class="delete" href="javascript:;"><span class="label label-danger">Delete</span></a></td>
+                              </tr>
+                              <tr class="">
+                                 <td>vectorlab</td>
+                                 <td class="hidden-phone">dk mosa</td>
+                                 <td class="hidden-phone">132</td>
+                                 <td class="center hidden-phone">elite user</td>
+                                 <td><a class="edit" href="javascript:;"><span class="label label-success">Edit</span></a></td>
+                                 <td><a class="delete" href="javascript:;"><span class="label label-danger">Delete</span></a></td>
+                              </tr>
+                              <tr class="">
+                                 <td>Admin</td>
+                                 <td class="hidden-phone"> Flat Lab</td>
+                                 <td class="hidden-phone">462</td>
+                                 <td class="center hidden-phone">new user</td>
+                                 <td><a class="edit" href="javascript:;"><span class="label label-success">Edit</span></a></td>
+                                 <td><a class="delete" href="javascript:;"><span class="label label-danger">Delete</span></a></td>
+                              </tr>
+                              <tr class="">
+                                 <td>Rafiqul</td>
+                                 <td class="hidden-phone">Rafiqul dulal</td>
+                                 <td class="hidden-phone">62</td>
+                                 <td class="center hidden-phone">new user</td>
+                                 <td><a class="edit" href="javascript:;"><span class="label label-success">Edit</span></a></td>
+                                 <td><a class="delete" href="javascript:;"><span class="label label-danger">Delete</span></a></td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </section>
+            </section>
+      <!-- END WRAPPER  -->
+         </section>
+     <!-- END MAIN CONTENT --> 
+     <!-- BEGIN FOOTER --> 
+         {include file='pub/footer'}
+         <block name='footer'>
+         </block>
+     <!-- END FOOTER --> 
+      </section>
+    <!-- END SECTION -->
+
+<!-- BEGIN JS -->     
+    {include file='pub/js'}
+    <block name='js'>
+    </block>
+    <!-- END JS --> 
+   </body>
+</html>
+
+

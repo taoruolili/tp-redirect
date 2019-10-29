@@ -20,13 +20,16 @@ class LoginController extends Controller
     }
 
     /**
-     * 显示创建资源表单页.
+     * 退出登录
      *
      * @return \think\Response
      */
-    public function create()
+    public function logout()
     {
-        //
+        //清空session
+        session('uname',null);
+        // 跳转到登录页
+        return '<script>location.href="login";</script>';die;
     }
 
     /**
@@ -58,9 +61,9 @@ class LoginController extends Controller
                 echo '<script>alert("用户名不正确!");location.href="login";</script>';die;
             }
             //给session存入一个标记，用作判断是否登录
-            $_SESSION['flg'] = 1;
+            session('uname',$uname);
             // 跳转到首页
-            echo '<script>alert("登录成功!");location.href="admin";</script>';die;
+            echo '<script>alert("登录成功!");location.href="admin_index";</script>';die;
         }
 
     /**
