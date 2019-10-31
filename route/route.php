@@ -30,10 +30,14 @@ Route::rule('admin_index','admin/IndexController/index')->middleware('check');
 Route::rule('user_index','admin/UserController/index')->middleware('check');
 
 //显示推广站对应下单站域名列表
-Route::rule('exandor_index','admin/ExandorController/index');
+Route::rule('exandor_index','admin/ExandorController/index')->middleware('check');
 
 //显示sku对应url页面
-Route::rule('sku_index','admin/SkuController/index');
+Route::rule('sku_index','admin/SkuController/index')->middleware('check');
+
+
+
+
 //前台
 Route::rule('/','home/IndexController/index');
 
