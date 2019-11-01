@@ -4,7 +4,7 @@ namespace app\admin\controller;
 
 use think\Controller;
 use think\Request;
-
+use think\DB;
 class ExandorController extends Controller
 {
     /**
@@ -14,8 +14,10 @@ class ExandorController extends Controller
      */
     public function index()
     {
+        //获取数据
+        $data = DB::table('domain')->select();
         //显示列表
-        return view('domain/index');
+        return view('domain/index',['data'=>$data]);
     }
 
     /**
@@ -25,7 +27,8 @@ class ExandorController extends Controller
      */
     public function create()
     {
-        //
+        //显示添加页面
+        return view('domain/add');
     }
 
     /**
@@ -36,7 +39,15 @@ class ExandorController extends Controller
      */
     public function save(Request $request)
     {
-        //
+        //添加到数据库
+        $res = DB::table('domain')->insert($request->post());
+        //判断返回结果
+         if($res){
+            //成功
+            return '<script>alert("添加成功");location.href="/exandor_index";</script>';
+        }
+            //失败
+            return '<script>alert("添加失败");location.href="/exandor_add";</script>';
     }
 
     /**
@@ -58,7 +69,10 @@ class ExandorController extends Controller
      */
     public function edit($id)
     {
-        //
+        // 获取要修改的数据
+        $data = DB::table('domain')->find($id);
+        //显示修改页面
+        return view('domain/edit',['data'=>$data]);
     }
 
     /**
@@ -70,7 +84,17 @@ class ExandorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //接收要修改的数据
+        $data = $request->post();
+        //修改数据
+        $res = DB::table('domain')->where('id',$id)->update($data);
+        //判断返回结果
+        if($res){
+            //成功
+            return '<script>alert("修改成功");location.href="/exandor_index";</script>';
+        }
+            //失败
+            return '<script>alert("修改失败");location.href="/exandor_index";</script>';
     }
 
     /**
@@ -81,6 +105,14 @@ class ExandorController extends Controller
      */
     public function delete($id)
     {
-        //
+        //删除数据
+        $res = DB::table('domain')->delete($_GET['id']);
+        //判断
+        if($res){
+            //成功
+            return json_encode(['code'=>'1']);
+        }
+            //失败
+            return json_encode(['code'=>'0']);
     }
 }

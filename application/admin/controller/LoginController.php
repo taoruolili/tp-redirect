@@ -29,7 +29,7 @@ class LoginController extends Controller
         //清空session
         session('uname',null);
         // 跳转到登录页
-        return '<script>location.href="login";</script>';die;
+        return '<script>location.href="/login";</script>';die;
     }
 
     /**
@@ -46,7 +46,7 @@ class LoginController extends Controller
         $upass = $data['upass'];
         //判断用户名和密码是否为空
         if(empty($uname) || empty($upass)){
-            echo '<script>alert("用户名或密码不能为空!");location.href="login";</script>';die;
+            echo '<script>alert("用户名或密码不能为空!");location.href="/login";</script>';die;
             }
             //用传入的uname去数据库查询有没有此用户
             $res = User::where('uname', $uname)->find();
@@ -54,16 +54,16 @@ class LoginController extends Controller
             if(!empty($res)){
                 //有此用户  判断密码
                 if($upass != $res->upass){
-                    echo '<script>alert("密码不正确!");location.href="login";</script>';die;
+                    echo '<script>alert("密码不正确!");location.href="/login";</script>';die;
                 }
             }else{
                 //查不到此用户
-                echo '<script>alert("用户名不正确!");location.href="login";</script>';die;
+                echo '<script>alert("用户名不正确!");location.href="/login";</script>';die;
             }
             //给session存入一个标记，用作判断是否登录
             session('uname',$uname);
             // 跳转到首页
-            echo '<script>alert("登录成功!");location.href="admin_index";</script>';die;
+            echo '<script>alert("登录成功!");location.href="/admin_index";</script>';die;
         }
 
     /**

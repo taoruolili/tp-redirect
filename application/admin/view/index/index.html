@@ -49,11 +49,23 @@
 	  <!-- BEGIN WRAPPER  -->
         <section class="wrapper">
 	       <div class="row state-overview">
-          <h3>使用事项:</h3>
+          <h4>使用事项:</h4>
           <ol>
-            <li>Coffee</li>
-            <li>Tea</li>
-            <li>Milk</li>
+            <li>请求接口返回url地址说明：</li>
+    a：判断domain表中有没有对应的域名：<br>
+        1.有：继续查找sku表中是否有对应的sku<br>
+            (1)有：返回对应的url(域名拼接url)<br>
+            (2)没有：返回跳转站对应的orders字段值  <br>
+        2.没有：返回状态码3<br>
+    b：没有：返回状态码3<br>
+
+    <li>状态码</li>
+    2：蜘蛛 =>不做处理，正常访问<br>
+    3：找不到sku  =>跳转到404页面<br>
+    4：用domain表中id没有找到sku_redirect表中对应的domain_id<br>
+
+    <li>domain表中extension字段值不带www</li>
+    <li>sku_redirect表中domain_id字段关联domain表中id字段</li>
           </ol>
          </div>
 		   <!-- END ROW  -->

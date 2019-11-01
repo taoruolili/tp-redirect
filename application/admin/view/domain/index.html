@@ -11,7 +11,7 @@
       <!-- BEGIN SHORTCUT ICON -->
     <link rel="shortcut icon" href="img/favicon.ico">
     <!-- END SHORTCUT ICON -->
-      <title>统计列表</title>
+      <title>域名列表</title>
     
     <!-- BEGIN STYLESHEET --> 
       {include file='pub/css'}
@@ -49,7 +49,7 @@
                      <div class="adv-table editable-table ">
                         <div class="clearfix">
                            <div class="btn-group">
-                           <form action="add_user" method="get">
+                           <form action="/exandor_add" method="get">
                               <button id="" class="btn btn-success green">
                               添加 <i class="fa fa-plus"></i>
                               </button>
@@ -70,111 +70,23 @@
                         <table class="table table-striped table-hover table-bordered" id="editable-sample">
                            <thead>
                               <tr>
-                                 <th>Username</th>
-                                 <th class="hidden-phone">Full Name</th>
-                                 <th class="hidden-phone">Points</th>
-                                 <th class="hidden-phone">Notes</th>
-                                 <th>Edit</th>
-                                 <th>Delete</th>
+                                 <th>ID</th>
+                                 <th class="hidden-phone">推广站</th>
+                                 <th class="hidden-phone">下单站</th>
+                                 <th>操作</th>
+                                 <th>操作</th>
                               </tr>
                            </thead>
                            <tbody>
+                              {foreach $data as $v}
                               <tr class="">
-                                 <td>Jondi Rose</td>
-                                 <td class="hidden-phone">Alfred Jondi Rose</td>
-                                 <td class="hidden-phone">1234</td>
-                                 <td class="center hidden-phone">super user</td>
-                                 <td><a class="edit" href="javascript:;"><span class="label label-success">Edit</span></a></td>
-                                 <td><a class="delete" href="javascript:;"><span class="label label-danger">Delete</span></a></td>
+                                 <td>{$v['id']}</td>
+                                 <td class="hidden-phone">{$v['extension']}</td>
+                                 <td class="hidden-phone">{$v['orders']}</td>
+                                 <td><a class="" href="/exandor_edit/{$v['id']}"><span class="label label-success">修改</span></a></td>
+                                 <td><a class="" onclick="deleteDomain(this.id)" id="{$v['id']}" href=""><span class="label label-danger">删除</span></a></td>
                               </tr>
-                              <tr class="">
-                                 <td>Dulal</td>
-                                 <td class="hidden-phone">Jonathan Smith</td>
-                                 <td class="hidden-phone">434</td>
-                                 <td class="center hidden-phone">new user</td>
-                                 <td><a class="edit" href="javascript:;"><span class="label label-success">Edit</span></a></td>
-                                 <td><a class="delete" href="javascript:;"><span class="label label-danger">Delete</span></a></td>
-                              </tr>
-                              <tr class="">
-                                 <td>Sumon</td>
-                                 <td class="hidden-phone"> Sumon Ahmed</td>
-                                 <td class="hidden-phone">232</td>
-                                 <td class="center hidden-phone">super user</td>
-                                 <td><a class="edit" href="javascript:;"><span class="label label-success">Edit</span></a></td>
-                                 <td><a class="delete" href="javascript:;"><span class="label label-danger">Delete</span></a></td>
-                              </tr>
-                              <tr class="">
-                                 <td>vectorlab</td>
-                                 <td class="hidden-phone">dk mosa</td>
-                                 <td class="hidden-phone">132</td>
-                                 <td class="center hidden-phone">elite user</td>
-                                 <td><a class="edit" href="javascript:;"><span class="label label-success">Edit</span></a></td>
-                                 <td><a class="delete" href="javascript:;"><span class="label label-danger">Delete</span></a></td>
-                              </tr>
-                              <tr class="">
-                                 <td>Admin</td>
-                                 <td class="hidden-phone"> Flat Lab</td>
-                                 <td class="hidden-phone">462</td>
-                                 <td class="center hidden-phone">new user</td>
-                                 <td><a class="edit" href="javascript:;"><span class="label label-success">Edit</span></a></td>
-                                 <td><a class="delete" href="javascript:;"><span class="label label-danger">Delete</span></a></td>
-                              </tr>
-                              <tr class="">
-                                 <td>Rafiqul</td>
-                                 <td class="hidden-phone">Rafiqul dulal</td>
-                                 <td class="hidden-phone">62</td>
-                                 <td class="center hidden-phone">new user</td>
-                                 <td><a class="edit" href="javascript:;"><span class="label label-success">Edit</span></a></td>
-                                 <td><a class="delete" href="javascript:;"><span class="label label-danger">Delete</span></a></td>
-                              </tr>
-                              <tr class="">
-                                 <td>Jhon Doe</td>
-                                 <td class="hidden-phone">Jhon Doe </td>
-                                 <td class="hidden-phone">1234</td>
-                                 <td class="center hidden-phone">super user</td>
-                                 <td><a class="edit" href="javascript:;"><span class="label label-success">Edit</span></a></td>
-                                 <td><a class="delete" href="javascript:;"><span class="label label-danger">Delete</span></a></td>
-                              </tr>
-                              <tr class="">
-                                 <td>Dulal</td>
-                                 <td class="hidden-phone">Jonathan Smith</td>
-                                 <td class="hidden-phone">434</td>
-                                 <td class="center hidden-phone">new user</td>
-                                 <td><a class="edit" href="javascript:;"><span class="label label-success">Edit</span></a></td>
-                                 <td><a class="delete" href="javascript:;"><span class="label label-danger">Delete</span></a></td>
-                              </tr>
-                              <tr class="">
-                                 <td>Sumon</td>
-                                 <td class="hidden-phone"> Sumon Ahmed</td>
-                                 <td class="hidden-phone">232</td>
-                                 <td class="center hidden-phone">super user</td>
-                                 <td><a class="edit" href="javascript:;"><span class="label label-success">Edit</span></a></td>
-                                 <td><a class="delete" href="javascript:;"><span class="label label-danger">Delete</span></a></td>
-                              </tr>
-                              <tr class="">
-                                 <td>vectorlab</td>
-                                 <td class="hidden-phone">dk mosa</td>
-                                 <td class="hidden-phone">132</td>
-                                 <td class="center hidden-phone">elite user</td>
-                                 <td><a class="edit" href="javascript:;"><span class="label label-success">Edit</span></a></td>
-                                 <td><a class="delete" href="javascript:;"><span class="label label-danger">Delete</span></a></td>
-                              </tr>
-                              <tr class="">
-                                 <td>Admin</td>
-                                 <td class="hidden-phone"> Flat Lab</td>
-                                 <td class="hidden-phone">462</td>
-                                 <td class="center hidden-phone">new user</td>
-                                 <td><a class="edit" href="javascript:;"><span class="label label-success">Edit</span></a></td>
-                                 <td><a class="delete" href="javascript:;"><span class="label label-danger">Delete</span></a></td>
-                              </tr>
-                              <tr class="">
-                                 <td>Rafiqul</td>
-                                 <td class="hidden-phone">Rafiqul dulal</td>
-                                 <td class="hidden-phone">62</td>
-                                 <td class="center hidden-phone">new user</td>
-                                 <td><a class="edit" href="javascript:;"><span class="label label-success">Edit</span></a></td>
-                                 <td><a class="delete" href="javascript:;"><span class="label label-danger">Delete</span></a></td>
-                              </tr>
+                              {/foreach}
                            </tbody>
                         </table>
                      </div>
@@ -198,6 +110,33 @@
     </block>
     <!-- END JS --> 
    </body>
+   <script type="text/javascript">
+    function deleteDomain(id){
+        if (confirm("您确定要删除吗 ?") == false) {
+          return;
+      }
+
+      $.ajax({
+                type:'get',
+                url:'/exandor_delete/id',
+                dataType:'json',
+                data:{  'id' : id  }, //这里的data是一个对象
+                async:'true', //默认值: true。默认设置下，所有请求均为异步请求。如果需要发送同步请求，请将此选项设置为 false。
+                
+                   success:function(data) {    //这里的data是ajax发送请求后返回的数据
+                        if(data){
+                            alert("删除成功！");window.location.href="/exandor_index";
+                        }
+                        
+                  },
+                    error:function() {
+                        alert("删除失败！");window.location.href="/exandor_index";
+                   },
+                });
+                
+    }
+   </script>
 </html>
+
 
 
